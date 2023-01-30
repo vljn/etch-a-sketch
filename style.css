@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=DotGothic16&family=VT323&display=swap");
+
+html,
+body {
+  margin: 0;
+  background-color: #2b2d42;
+}
+
+#board {
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 5vh;
+  width: 80vmin;
+  background-color: #bcbdc0;
+  box-shadow: 10px 10px #545557;
+}
+
+.square {
+  flex: 1;
+  aspect-ratio: 1 / 1;
+}
+
+.row {
+  display: flex;
+}
+
+h1 {
+  margin: 0;
+  font-family: "VT323";
+  text-align: center;
+  margin-top: 1vh;
+  font-size: 8vh;
+  color: #eca400;
+  text-shadow: 5px 5px#785400;
+}
