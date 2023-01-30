@@ -9,7 +9,31 @@
   </head>
   <body>
     <h1>ETCH-A-SKETCH</h1>
-    <div id="board"></div>
+    <div id="game">
+      <div id="board"></div>
+      <div id="controls">
+        <h2>CONTROLS</h2>
+        <button id="reset">RESET</button>
+        <div id="slider-area">
+          <h3></h3>
+          <input type="range" min="1" max="100" value="16" id="slider" />
+        </div>
+        <div id="input-area">
+          <h3>Input type:</h3>
+          <div class="radios">
+            <div class="left">
+              <input type="radio" name="controls" id="hover" class="radio-btn" checked="checked" />
+              Hover
+            </div>
+            <div class="right">
+              <input type="radio" name="controls" id="click" class="radio-btn" />
+              Click
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="./script.js"></script>
   </body>
 </html>

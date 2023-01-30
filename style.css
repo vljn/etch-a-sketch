@@ -4,13 +4,30 @@ html,
 body {
   margin: 0;
   background-color: #2b2d42;
+  font-family: "VT323", sans-serif;
+}
+
+#game {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5vmin;
+  margin-top: 5vh;
+  align-items: center;
+}
+
+#controls {
+  background-color: #eca400;
+  border-radius: 10px;
+  border: 3px solid #785400;
+  width: 20vmax;
+  padding: 1vmax;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #board {
-  width: fit-content;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 5vh;
   width: 80vmin;
   background-color: #bcbdc0;
   box-shadow: 10px 10px #545557;
@@ -27,10 +44,102 @@ body {
 
 h1 {
   margin: 0;
-  font-family: "VT323";
   text-align: center;
   margin-top: 1vh;
   font-size: 8vh;
   color: #eca400;
   text-shadow: 5px 5px#785400;
+}
+
+h2 {
+  margin: 0;
+  color: #000;
+  font-size: 32px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+#slider {
+  appearance: none;
+  width: 90%;
+  height: 20px;
+  background: #785400;
+  border-radius: 10px;
+  outline: none;
+  opacity: 0.8;
+  transition: opacity 0.5s;
+}
+
+#slider:hover {
+  opacity: 1;
+}
+
+#slider::-webkit-slider-thumb {
+  background: #332400;
+  cursor: pointer;
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+#slider-area {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2vh;
+  margin-bottom: 10px;
+}
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #000;
+  font-size: 3vh;
+}
+
+#reset {
+  height: 10%;
+  width: 40%;
+  margin-bottom: 5%;
+  font-family: "VT323", sans-serif;
+  font-size: 3vmin;
+  background-color: #332400;
+  color: white;
+  border: none;
+  box-shadow: 0.5vmin 0.5vmin 0px 0.25vmin #614100;
+  transition: all 250ms;
+}
+
+#reset:hover {
+  translate: 0.5vmin 0.5vmin;
+  box-shadow: none;
+}
+
+#input-area {
+  width: 100%;
+}
+
+.radios {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 3vh;
+}
+
+.radio-btn {
+  height: 15px;
+  width: 15px;
+  background-color: #835c01;
+  opacity: 1;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.radio-btn:checked {
+  box-shadow: 0 0 0px 5px#614100;
+  transition: all 0.25s;
 }
