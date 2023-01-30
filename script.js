@@ -12,7 +12,11 @@ function fillBoard(board, numberOfSquares) {
   }
   const squares = document.querySelectorAll(".square");
 
-  squares.forEach((sqr) => sqr.addEventListener("mouseenter", colorSquare));
+  if (radios[0].checked) {
+    squares.forEach((sqr) => sqr.addEventListener("mouseenter", colorSquare));
+  } else {
+    squares.forEach((sqr) => sqr.addEventListener("click", colorSquare));
+  }
 
   sliderH.innerText = `Size: ${numberOfSquares} x ${numberOfSquares}`;
 }
@@ -36,14 +40,20 @@ function fillBoardFromInput(e) {
   fillBoard(board, e.target.value);
 }
 
+function initialize() {
+  fillBoard(board, 16);
+  const squares = document.querySelectorAll(".square");
+  squares.forEach((sqr) => sqr.addEventListener("mouseenter", colorSquare));
+  slider.addEventListener("input", fillBoardFromInput);
+  radios.forEach((btn) => btn.addEventListener("input", changeInput));
+  reset.addEventListener("click", () => {
+    fillBoard(board, slider.value);
+  });
+}
+
 const board = document.querySelector("#board");
 const slider = document.querySelector("#slider");
 const sliderH = document.querySelector("#slider-area h3");
 const radios = document.querySelectorAll(".radio-btn");
 const reset = document.querySelector("#reset");
-fillBoard(board, 16);
-slider.addEventListener("input", fillBoardFromInput);
-radios.forEach((btn) => btn.addEventListener("input", changeInput));
-reset.addEventListener("click", () => {
-  fillBoard(board, slider.value);
-});
+initialize();
