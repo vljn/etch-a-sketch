@@ -1,8 +1,8 @@
-function fillBoard(board) {
-  for (let i = 0; i < 16; i++) {
+function fillBoard(board, numberOfSquares) {
+  for (let i = 0; i < numberOfSquares; i++) {
     let row = document.createElement("div");
     row.classList.add("row");
-    for (let j = 0; j < 16; j++) {
+    for (let j = 0; j < numberOfSquares; j++) {
       let square = document.createElement("div");
       square.classList.add("square");
       row.appendChild(square);
@@ -16,6 +16,6 @@ function colorSquare() {
 }
 
 const board = document.querySelector("#board");
-fillBoard(board);
+fillBoard(board, 24);
 const squares = document.querySelectorAll(".square");
 squares.forEach((sqr) => sqr.addEventListener("mouseenter", colorSquare));
